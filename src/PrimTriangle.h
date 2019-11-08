@@ -66,14 +66,14 @@ public:
         float d11 = edge2.dot(edge2);
         float d20 = c.dot(edge1);
         float d21 = c.dot(edge2);
-        float invDenom = 1.0f / (d00 * d11 - d01 * d01);
+        float invDenom = 1.0f / (d00*d11-d01*d01);
         
-        ray.v = (d11 * d20 - d01 * d21) * invDenom;
-		float w = (d00 * d21 - d01 * d20) * invDenom;
+        ray.v = (d11*d20-d01*d21) * invDenom;
+		float w = (d00*d21-d01*d20) * invDenom;
         ray.u = 1.0f - ray.v - w;
 
-		
 		ray.hit = this;
+
 		return true;
 	}
 
